@@ -1,0 +1,21 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header *ngIf="isAdminMode" class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <a class="md-title-icon" href="http://www.google.com" target="_blank"><i></i></a>
+      <span class="mdl-layout-title">JCK Admin</span>
+    </div>
+    <div class="mdl-navigation">
+      <a *ngFor="let item of menuItems" [routerLink]="item.link" routerLinkActive="router-link-active" class="nav-link">{{item.caption}}</a>
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+    <section>
+      <div class="page-content">
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+  </main>
+  <!-- <app-spinner></app-spinner> -->
+  <!-- <app-toast></app-toast> -->
+  <!-- <app-modal></app-modal> -->
+</div>

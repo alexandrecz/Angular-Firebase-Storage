@@ -1,0 +1,35 @@
+
+<article class="template animated slideInRight">
+
+  <div class="app-details mdl-card">
+
+    <h4>Artigo</h4>
+
+    <div class="mdl-textfield mdl-textfield--floating-label">
+      <label class="mdl-textfield__label" for="nometext">Titulo</label>
+      <input type="text" maxlength="35" id="nometext" class="mdl-textfield__input" [(ngModel)]="art.title" />
+    </div>
+    
+    <div class="mdl-textfield mdl-textfield--floating-label">
+      <input type="text" maxlength="35" class="mdl-textfield__input" id="capatext" [(ngModel)]="art.short" />
+      <label class="mdl-textfield__label" for="capatext">Capa</label>
+    </div>
+
+    <div class="mdl-textfield mdl-textfield--floating-label">
+      <label class="mdl-textfield__label" for="sidetext">Descrição</label>
+      <textarea id="sidetext" class="mdl-textfield__input" rows="4" id="capatext" [(ngModel)]="art.desc" ></textarea>
+    </div>
+
+    <div>
+      <button class="dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect
+      mdl-button--accent" (click)="save()">Salvar</button>
+      &nbsp;
+      <button class="dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect
+      " (click)="cancel()">Cancelar</button>
+      &nbsp;
+      <button class="dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)="delete()" [class.not-displayed]="isAddMode()">Delete</button>
+    </div>
+
+  </div>
+
+</article>

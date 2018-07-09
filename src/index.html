@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>JCK - Site</title>
+  <base href="./">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
+
+
+  <link rel="stylesheet" href="assets/material.deep_orange-pink.min.css">
+  <!-- <link rel="stylesheet" href="assets/sprite-av-white.css"> -->
+  <link rel="stylesheet" href="assets/animate.css">
+  <link rel="stylesheet" href="assets/app.css">
+
+  <!-- <script src="node_modules/rxjs/bundles/Rx.js"></script> -->
+</head>
+<body id="home">
+  <app-root class="container"></app-root>
+<script>
+  $(document).ready(function() {
+    $('#navbar a').click(function(event) {
+      event.preventDefault();
+      var link = this;
+      $.smoothScroll({
+        scrollTarget: link.hash
+      });
+    });
+
+    // When the user scrolls the page, execute myFunction 
+    window.onscroll = function() {myFunction()};
+
+    // Get the navbar
+    var navbar = document.getElementById("navbar");
+
+    // Get the offset position of the navbar
+    if(navbar!=null){
+        var sticky = navbar.offsetTop;
+
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+          if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky");
+            navbar.classList.remove("uppercase");
+            navbar.classList.add("lowercase");
+          } else {
+            navbar.classList.remove("sticky");
+            navbar.classList.remove("lowercase");
+            navbar.classList.add("uppercase");
+          }
+        }
+     }
+  });
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCce-yS1wGodOJXTOSMeQbdfKrN_lvvc1w",
+    authDomain: "jckadv2017.firebaseapp.com",
+    databaseURL: "https://jckadv2017.firebaseio.com",
+    projectId: "jckadv2017",
+    storageBucket: "jckadv2017.appspot.com",
+    messagingSenderId: "183240143589"
+  };
+  firebase.initializeApp(config);
+</script>
+</body>
+</html>

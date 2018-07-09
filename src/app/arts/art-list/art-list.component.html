@@ -1,0 +1,25 @@
+<article class="template animated slideInRight">
+  <div class="app-details">
+
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" (click)="gotoNew()">
+    <i class="material-icons">+</i>
+  </button>
+
+  <ul class="artigos">
+    <li *ngFor="let art of arts">
+
+      <div class="mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">{{art.title}}</h2>
+        </div>
+        <div class="mdl-card__menu">
+          <button class="mdl-button mdl-color--accent" (click)="gotoDetail(art)">
+            Editar
+          </button>
+        </div>
+      </div>
+
+    </li>
+  </ul>
+  </div>
+</article>
